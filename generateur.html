@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Générateur d'exercices IA — AIxercice</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body data-page="generateur">
+
+<div id="site-header"></div>
+
+<header class="page-head">
+  <div class="container">
+    <span class="demo-badge">Aperçu de fonctionnalité</span>
+    <h1 style="margin-top:14px">Générateur d'exercices IA</h1>
+    <p class="muted">Choisis une compétence et un niveau : l'IA s'appuie sur les exercices déjà
+      publiés sur la compétence pour en proposer un nouveau, dans le même esprit. Cette démonstration
+      simule le résultat — aucun appel IA réel n'est effectué dans cette V1.</p>
+  </div>
+</header>
+
+<div class="container tool-layout">
+  <form class="tool-form" id="gen-form">
+    <div class="form-row">
+      <label for="gen-theme">Thème</label>
+      <select id="gen-theme"></select>
+    </div>
+    <div class="form-row">
+      <label for="gen-competence">Compétence</label>
+      <select id="gen-competence"></select>
+    </div>
+    <div class="form-row">
+      <label for="gen-type">Type d'exercice</label>
+      <select id="gen-type">
+        <option value="calcul">Calcul</option>
+        <option value="qcm">QCM</option>
+        <option value="redaction">Rédaction</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label for="gen-diff">Difficulté souhaitée</label>
+      <select id="gen-diff">
+        <option value="1">1 — Découverte</option>
+        <option value="2" selected>2 — Application directe</option>
+        <option value="3">3 — Intermédiaire</option>
+        <option value="4">4 — Exigeant</option>
+        <option value="5">5 — Approfondissement</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:100%" id="gen-submit">Générer un exercice</button>
+    <p style="font-size:12.5px;color:var(--ink-faint);margin-top:12px">
+      S'appuie sur les exercices existants de la base pour cette compétence, afin de rester
+      cohérent en style et en niveau.
+    </p>
+  </form>
+
+  <div class="tool-result" id="gen-result">
+    <div class="placeholder">L'exercice généré apparaîtra ici.</div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/store.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/page-generateur.js"></script>
+</body>
+</html>

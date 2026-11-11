@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIxercice — Trouve l'exercice qu'il te faut</title>
+<meta name="description" content="La base d'exercices de physique-chimie par compétence : recherche, créateurs, playlists et génération assistée par IA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  window.MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
+</head>
+<body data-page="accueil">
+
+<div id="site-header"></div>
+
+<header class="hero">
+  <div class="container">
+    <div>
+      <h1>Trouve l'exercice de<br>physique-chimie qu'il te faut.</h1>
+      <p class="lede">Des milliers d'exercices de seconde classés par compétence, publiés par
+        des enseignants. Cherche, suis tes créateurs préférés, suis des playlists de révision —
+        ou laisse l'IA t'en proposer un nouveau.</p>
+      <form class="hero-search" id="hero-search-form">
+        <input type="text" id="hero-search-input" placeholder="Ex. « vitesse moyenne », « bilan des forces »…">
+        <button type="submit">Chercher</button>
+      </form>
+      <div class="hero-chips" id="hero-chips"></div>
+    </div>
+    <div class="pinned-card">
+      <div class="pc-label">Exercice du moment</div>
+      <h4 style="font-family:var(--font-body);font-weight:600;font-size:16px;margin-bottom:10px">
+        Vitesse moyenne d'un coureur de 100 m
+      </h4>
+      <div class="pc-statement">
+        Un athlète parcourt le 100 mètres en \( 10{,}2\,\text{s} \). Calculer sa vitesse
+        moyenne en \( \text{m/s} \), puis la convertir en \( \text{km/h} \).
+      </div>
+      <div class="pc-foot">
+        <span>Yanis Belkacem</span>
+        <span style="display:flex;gap:8px;align-items:center"><span>Calcul</span><span style="border-left:1px solid var(--line);padding-left:8px">8 min</span></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Créateurs à suivre</h2>
+      <a class="section-link" href="catalogue.html">Voir le catalogue</a>
+    </div>
+    <div class="rail" id="creators-rail"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Exercices tendance</h2>
+      <span class="muted">Sélection sur le thème « Mouvement et interactions »</span>
+    </div>
+    <div class="grid grid-3" id="trending-grid"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Playlists populaires</h2>
+      <a class="section-link" href="catalogue.html">Toutes les playlists</a>
+    </div>
+    <div class="grid grid-2" id="playlists-grid"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head">
+      <h2>Au-delà de la recherche</h2>
+    </div>
+    <div class="grid grid-2">
+      <a href="generateur.html" class="ex-card" style="text-decoration:none">
+        <span class="demo-badge">Aperçu</span>
+        <h3 style="margin-top:10px">Générateur d'exercices IA</h3>
+        <p style="font-size:14px;color:var(--ink-soft)">
+          Choisis une compétence et un niveau de difficulté : l'IA s'appuie sur les exercices
+          déjà publiés pour en proposer un nouveau, dans le même esprit.
+        </p>
+      </a>
+      <a href="import.html" class="ex-card" style="text-decoration:none">
+        <span class="demo-badge">Aperçu</span>
+        <h3 style="margin-top:10px">Magic Import</h3>
+        <p style="font-size:14px;color:var(--ink-soft)">
+          Prends en photo un exercice imprimé ou manuscrit : il est transformé en exercice
+          numérique, prêt à être relu et publié.
+        </p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/data.js"></script>
+<script src="js/api.js"></script>
+<script src="js/store.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/page-home.js"></script>
+</body>
+</html>
